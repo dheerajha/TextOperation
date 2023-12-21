@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
     // we are passing the props and passing the props.title and in the title we are doing {props.title}and in the title we are doing props.title and {} because it is the javaScript
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="/">
                 {props.title}
             </a>
@@ -41,7 +41,7 @@ export default function Navbar(props) {
                         aria-label="Search"
                     />
                     <button
-                        className="btn btn-outline-success my-2 my-sm-0"
+                        className="btn btn-outline-primary my-2 my-sm-0"
                         type="submit"
                     >
                         Search
