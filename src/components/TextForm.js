@@ -6,16 +6,18 @@ export default function TextForm(props) {
         // console.log("UpperCase was clicked"+ text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to upper case","success")
     }
     const handleLowClick = () => {
         // console.log("UpperCase was clicked"+ text);
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to lower case","success")
     }
     const handleCode = () => {
-
+        
         let newText = "";
-
+        
         for (let i = 0; i < text.length; i++) {
             if (text.charCodeAt(i) === 32) {
                 newText += " ";
@@ -23,21 +25,23 @@ export default function TextForm(props) {
                 newText += text.charCodeAt(i) + " ";
             }
         }
-
-
+        
+        
         setText(newText);
+        props.showAlert("converted to the code","success")
     }
     const handleClear = () => {
         let newText = "";
         setText(newText);
+        props.showAlert("cleared","success")
     }
-
-
+    
+    
     const handleOnChange = (event) => {
         // console.log("on Change");
         setText(event.target.value);
     }
-
+    
     const [text, setText] = useState("");
     // text = "this is the new text"//this is the wrong way to set the text
     // setText("new Text");;//this is the correct way to set the state
