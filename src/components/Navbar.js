@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
     // we are passing the props and passing the props.title and in the title we are doing {props.title}and in the title we are doing props.title and {} because it is the javaScript
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <a className="navbar-brand" href="/">
                 {props.title}
             </a>
@@ -33,22 +33,15 @@ export default function Navbar(props) {
                         </a>
                     </li>
                 </ul>
-                <form className="form-inline my-2 my-lg-0">
-                    <input
-                        className="form-control mr-sm-2"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                    />
-                    <button
-                        className="btn btn-outline-primary my-2 my-sm-0"
-                        type="submit"
-                    >
-                        Search
-                    </button>
-                </form>
+
+                <div className={`form-check form-switch text-$[props.mode === 'light' ? dark : light ]`}>
+                    <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+                </div>
+
+
             </div>
-        </nav>
+        </nav >
     );
 }
 
