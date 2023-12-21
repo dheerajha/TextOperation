@@ -12,10 +12,32 @@ export default function TextForm(props) {
         let newText = text.toLowerCase();
         setText(newText);
     }
+    const handleCode = () => {
+        
+        let newText = "";
+        
+        for (let i = 0; i < text.length; i++) {
+            if (text.charCodeAt(i) === 32) {
+                newText += " ";
+            } else {
+                newText += text.charCodeAt(i) + " ";
+            }
+        }
+    
+        
+        setText(newText);
+    }
+    const handleClear = () =>{
+        let newText = "";
+        setText(newText);
+    }
+    
+    
     const handleOnChange = (event) =>{
         // console.log("on Change");
         setText(event.target.value);
     }
+
     const [text,setText] = useState("");
     // text = "this is the new text"//this is the wrong way to set the text
     // setText("new Text");;//this is the correct way to set the state
@@ -29,6 +51,10 @@ export default function TextForm(props) {
             </div>
             <button className='btn btn-primary mx-1' onClick={handleUpClick}>Convert to Uppercase</button>
             <button className='btn btn-primary mx-1' onClick={handleLowClick}>Convert to Lowercase</button>
+            <button className='btn btn-primary mx-1' onClick={handleCode}>Convert to code </button>
+            <button className='btn btn-primary mx-1' onClick={handleClear}>Clear</button>
+    
+        
         </div>
         <div className="container my-3">
             <h1>You text summary</h1>
