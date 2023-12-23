@@ -45,8 +45,8 @@ function App() {
       {/* <Navbar  /> */}
       {/* we are creating the Navbar componets inside it there is Navbar component and passing the prop as title and similarly we are passing the about as props which we are changing the about text */}
       <div className="container my-3">
-        {/* <TextForm showAlert={showAlert} mode ={mode} heading ="Enter the text to analyze below" /> */}
-        <About mode ={mode} toggleMode={toggleMode}/>
+        <TextForm showAlert={showAlert} mode ={mode} heading ="Enter the text to analyze below" />
+        {/* <About mode ={mode} toggleMode={toggleMode}/> */}
       </div>
     </>
   );
